@@ -9,10 +9,8 @@ def generate_sorting_plots():
     os.makedirs(output_dir, exist_ok=True)
     df = pd.read_csv(csv_path)
     
-    # Promediar las muestras (a, b, c) para cada configuración
     df_mean = df.groupby(['algorithm', 'n', 'type', 'domain'])['time_ms'].mean().reset_index()
 
-    # Filtramos un caso representativo: arreglos aleatorios con dominio D7
     df_plot = df_mean[(df_mean['type'] == 'aleatorio') & (df_mean['domain'] == 'D7')]
     
     plt.figure(figsize=(10, 6))
@@ -21,7 +19,7 @@ def generate_sorting_plots():
         plt.plot(subset['n'], subset['time_ms'], marker='o', label=algo)
         
     plt.xscale('log')
-    plt.yscale('log') # Escala logarítmica para visualizar diferencias asintóticas
+    plt.yscale('log') 
     plt.title('Tiempo de Ejecución vs Tamaño (Aleatorio, D7)')
     plt.xlabel('Tamaño del arreglo (N)')
     plt.ylabel('Tiempo (ms)')

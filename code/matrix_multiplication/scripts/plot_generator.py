@@ -11,7 +11,6 @@ def generate_matrix_plots():
     
     df_mean = df.groupby(['algorithm', 'n', 'type', 'domain'])['time_ms'].mean().reset_index()
 
-    # Filtramos un caso representativo: matrices densas
     df_plot = df_mean[df_mean['type'] == 'densa']
     
     plt.figure(figsize=(10, 6))
