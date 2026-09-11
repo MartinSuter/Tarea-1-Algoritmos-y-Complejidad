@@ -1,5 +1,27 @@
-\begin{mdframed}
-    \textbf{La extensión máxima para esta sección es un párrafo breve (máximo 1/4 de página).}
-\end{mdframed}
+Lo mas relevante que deja este analisis experimental es comprobar que la cota matematica sirve como una gran guia teorica, pero aplicado al momento de programar no es lo unico que define la velocidad y uso de memoria de un programa. Cosas que en papel pueden parecer detalles irrelevantes o de poco impacto, como pedir constantemente memoria dinamica o aprovechar al maximo la cache, son las que en realidad definen si un programa sera rapido o lento en la practica. El caso del algoritmo de strassen es el mejor ejemplo de esto, este termino siendo casi 200 veces mas lento que el metodo clasico iterativo en matrices de tamaño $1024 \times 1024$, esto debido al enorme costo que presenta la recursion profunda en la memoria del computador. Con esto queda claro que los algoritmos complejos como strassen para adaptarse a la practica deben tener casos bases hibridos, como saltar a Naive en contextos especificos, logrando evitar la saturacion de la RAM del sistema operativo.
 
-Escriba una conclusión breve que interprete los resultados más importantes. Cada afirmación debe estar respaldada por los datos presentados.
+\vspace{1cm}
+
+\begin{thebibliography}{99}
+
+\bibitem{gfg-patience}
+GeeksforGeeks. \textit{Patience Sorting}. Disponible en: \url{https://www.geeksforgeeks.org/dsa/patience-sorting/}
+Recurso utilizado para comprender la logica de formacion de las pilas (piles) y la extraccion del elemento minimo utilizando colas de prioridad (Min-Heap).
+
+\bibitem{gfg-merge}
+GeeksforGeeks. \textit{Merge Sort Algorithm}. Disponible en: \url{https://www.geeksforgeeks.org/dsa/merge-sort/}
+Utilizado como referencia base para la implementacion optima de la funcion de mezcla (merge) y la estrategia de divide y vencerás sobre arreglos.
+
+\bibitem{gfg-quick}
+GeeksforGeeks. \textit{QuickSort Algorithm}. Disponible en: \url{https://www.geeksforgeeks.org/dsa/quick-sort-algorithm/}
+Referencia para la logica de particion del arreglo y la seleccion del pivote aleatorio para evitar caer en el peor caso teorico.
+
+\bibitem{gfg-strassen}
+GeeksforGeeks. \textit{Strassen's Matrix Multiplication}. Disponible en: \url{https://www.geeksforgeeks.org/dsa/strassens-matrix-multiplication/}
+Guia teorica ocupada para estructurar las 7 formulas de multiplicacion de sub-matrices y las operaciones de suma/resta necesarias para ensamblar la matriz resultante.
+
+\bibitem{gfg-naive}
+GeeksforGeeks. \textit{Matrix Multiplication}. Disponible en: \url{https://www.geeksforgeeks.org/matrix-multiplication/}
+Referencia para la implementacion del algoritmo tradicional iterativo (Naive) de complejidad $O(n^3)$ enfocado en la maximizacion de la localidad espacial.
+
+\end{thebibliography}

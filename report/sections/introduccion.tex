@@ -1,5 +1,5 @@
-\begin{mdframed}
-    \textbf{La extensión máxima para esta sección es un párrafo breve (máximo 1/4 de página).}
-\end{mdframed}
+En el presente informe presento el analisis de rendimiento de distintos algoritmos clasicos de ordenamiento y multiplicacion de matrices. En la teoria, sabemos cuanto deberian tardar matematicamente, pero aqui pondremos a prueba la teoria programandolos en C++ y midiendo sus tiempos reales, ademas del uso de memoria en el sistema.
 
-Escriba una introducción breve que presente los dos problemas estudiados (ordenamiento de arreglos unidimensionales y multiplicación de matrices cuadradas) y el objetivo del análisis experimental: relacionar el comportamiento práctico de los algoritmos con su complejidad teórica.
+\medskip
+
+Para el ordenamiento, evaluamos sort, QuickSort, MergeSort y PatienceSort usando arreglos de hasta diez millones de datos. Por otra parte, comparamos el metodo Naive versus el algoritmo de strassen puro multiplicando matrices cuadradas. El objetivo principal de este experimento es ver como detalles de la teoria a veces ignoran aspectos importantes del sistema como la peticion de memoria dinamica constante o como funciona el cache del computador, puntos esenciales que terminan afectando drasticamente la velocidad del programa.

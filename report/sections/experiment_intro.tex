@@ -1,5 +1,9 @@
-\begin{mdframed}
-    \textbf{La extensión máxima para esta sección es de media página.}
-\end{mdframed}
+Para la realizacion de este experimento, todos los algoritmos se programaron en C++17 y se compilaron utilizando g++ con la bandera de optimizacion -O3. Las pruebas fueron ejecutadas en un entorno Linux sobre un Lenovo IdeaPad Slim 3. Las especificaciones tecnicas del equipo son un procesador AMD Ryzen 5 7520U (4 nucleos y 8 hilos), 8gb de memoria RAM a 5500 MHz y almacenamiento SSD NVMe.
 
-Especifique el hardware y software utilizado para realizar los experimentos (por ejemplo, procesador, memoria RAM, sistema operativo, compilador y versión). Incluya una mención breve de los datasets utilizados, los cuales son los descritos en el enunciado de la tarea.
+\medskip
+
+Un detalle clave para entender los resultados es la memoria cache del procesador, que esta dividida en L1 (256 KB), L2 (2 MB) y L3 (4 MB). Tener claros estos limites fisicos del hardware nos servira para explicar mas adelante por que ciertos algoritmos que iteran de forma lineal (como el metodo clasico de las matrices) logran tiempos tan rapidos al aprovechar bien el espacio de la cache, en comparacion con los algoritmos que terminan ahogando la memoria RAM por estar pidiendo espacio dinamico constantemente.
+
+\medskip
+
+En cuanto a los datos de prueba, en el ordenamiento usamos arreglos desde 10 hasta $10^7$ elementos, usando datos aleatorios, ascendentes y descendentes. Por otra parte para las matrices ocupamos dimensiones cuadradas partiendo de $16 \times 16$ hasta $1024 \times 1024$. Finalmente, para evitar que algun proceso del sistema intervenga en las mediciones sobre el tiempo de CPU, ejecutamos cada configuracion tres veces seguidas y utilizamos el promedio de esos intentos para construir los graficos logaritmicos.
